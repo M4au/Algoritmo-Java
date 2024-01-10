@@ -1,0 +1,37 @@
+
+<script>
+    // Realizar un algoritmo que presente los 10 primeros números Fibonacci
+    // y cuente cuántos son pares e impares.
+
+    let a = 0, b = 1, c = 0, i = 0;
+    let num = 0;
+    let contPares = 0;
+    let contImp = 0;
+
+    num = Number(prompt('Ingrese un número'));
+
+    document.write('Los primeros ' , num , ' numeros Fibonacci son: ');
+
+    while (i < num) {
+        c = a + b
+        a = b
+        b = c
+        i++
+        document.write(a, ', ',)
+        
+        if (a % 2 == 0) {
+           
+            contPares++
+           
+        } else {
+            contImp++
+            
+            
+        }
+
+    }
+
+    document.write('<br>');
+    document.write('<br>Cantidad de números pares: ' , contPares , '<br>');
+    document.write('<br>Cantidad de números impares: ' , contImp , '<br>');
+</script>

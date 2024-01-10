@@ -1,0 +1,12 @@
+<script>
+    let base = 0, exponente = 0, resultado = 1;
+    base = Number(prompt('Ingrese la base'));
+    exponente = Number(prompt('Ingrese el exponente'));
+
+    while (exponente > 0) {
+        resultado = resultado * base;
+        exponente = exponente - 1;
+    }
+
+    document.write(resultado);
+</script>

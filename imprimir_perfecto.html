@@ -1,0 +1,56 @@
+<script>
+
+    // Función para verificar si un número es perfecto
+    function esNumeroPerfecto(numero) {
+        if (numero <= 1) {
+            return false;
+        }
+
+        let sumaDivisores = 1; // Inicializamos con el divisor 1
+        for (let i = 2; i <= Math.sqrt(numero); i++) {
+            if (numero % i === 0) {
+                sumaDivisores += i;
+                if (i !== numero / i) {
+                    sumaDivisores += numero / i;
+                }
+            }
+        }
+
+        return sumaDivisores === numero;
+    }
+
+    // Imprimir los primeros 3 números perfectos
+    document.write('<h2>Primeros 3 Números Perfectos</h2>');
+    let numerosPerfectos = [];
+    let n = 2;
+    while (numerosPerfectos.length < 3) {
+        let numeroPerfecto = Math.pow(2, n - 1) * (Math.pow(2, n) - 1);
+        if (esNumeroPerfecto(numeroPerfecto)) {
+            numerosPerfectos.push(numeroPerfecto);
+        }
+        n++;
+    }
+
+    for (let i = 0; i < numerosPerfectos.length; i++) {
+        document.write('<p>Número perfecto ' + (i + 1) + ': ' + numerosPerfectos[i] + '</p>');
+    }
+
+    // Verificar si los números ingresados son perfectos
+    let serieIngresada = prompt('Ingrese una serie de números separados por coma (ejemplo: 6,28,496):');
+    let numerosIngresados = serieIngresada.split(',').map(Number);
+
+    document.write('<h2>Verificación de Números Ingresados</h2>');
+    for (let i = 0; i < numerosIngresados.length; i++) {
+        let numeroIngresado = numerosIngresados[i];
+        if (!isNaN(numeroIngresado)) {
+            if (esNumeroPerfecto(numeroIngresado)) {
+                document.write('<p>' + numeroIngresado + ' es un número perfecto.</p>');
+            } else {
+                document.write('<p>' + numeroIngresado + ' no es un número perfecto.</p>');
+            }
+        } else {
+            document.write('<p>' + numerosIngresados[i] + ' no es un número válido.</p>');
+        }
+    }
+
+</script>

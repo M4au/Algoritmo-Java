@@ -1,0 +1,20 @@
+<script>
+    let N=0, num=0, SP=0, PI=0
+    PI = 1
+    N=Number(prompt('Ingrese un numero')) 
+    while (N > 0){
+        num=Number(prompt('Serie de Numeros'))
+        if(num % 2 == 0){
+            SP = SP + num
+        }
+        else{
+            PI = PI * num 
+        }
+        N = N - 1
+
+    }
+    document.write(' suma ' , SP)
+    document.write(' producto ' , PI)
+
+
+</script>

@@ -1,0 +1,21 @@
+<script>
+    let n=0 ,i=0 ,c=0
+    n= Number(prompt('Ingrese un numero'));
+    i=2
+    while(i <= n / 2 && c === 0){
+        if (n% i=== 0){
+            c=c+1
+
+        }
+        i = i + 1
+    }
+    if (c===0){
+        document.write( n, ' Es primo ');
+    }    
+    else{
+        document.write( n, ' No es primo ');
+    }
+
+    
+    
+</script>

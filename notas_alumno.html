@@ -1,0 +1,43 @@
+<script>
+
+    // Función para calcular la suma de las notas
+    function calcularSuma(notas) {
+        let suma = 0;
+        for (let i = 0; i < notas.length; i++) {
+            suma += notas[i];
+        }
+        return suma;
+    }
+
+    // Función para calcular el promedio de las notas
+    function calcularPromedio(notas) {
+        let suma = calcularSuma(notas);
+        return suma / notas.length;
+    }
+
+    // Ingreso de datos
+    let nombreAlumno = prompt('Ingrese el nombre del alumno:');
+    let nota1 = parseFloat(prompt('Ingrese la nota 1:'));
+    let nota2 = parseFloat(prompt('Ingrese la nota 2:'));
+    let nota3 = parseFloat(prompt('Ingrese la nota 3:'));
+
+    // Validar que las notas sean números válidos
+    if (isNaN(nota1) || isNaN(nota2) || isNaN(nota3)) {
+        document.write('<p>Por favor, ingrese notas válidas.</p>');
+    } else {
+        // Cálculo de la suma y el promedio
+        let notas = [nota1, nota2, nota3];
+        let sumaNotas = calcularSuma(notas);
+        let promedioNotas = calcularPromedio(notas);
+
+        // Mostrar resultados
+        document.write('<h2>Resultados</h2>');
+        document.write('<p>Nombre del alumno: ' + nombreAlumno + '</p>');
+        document.write('<p>Nota 1: ' + nota1 + '</p>');
+        document.write('<p>Nota 2: ' + nota2 + '</p>');
+        document.write('<p>Nota 3: ' + nota3 + '</p>');
+        document.write('<p>Suma de las notas: ' + sumaNotas.toFixed(2) + '</p>');
+        document.write('<p>Promedio de las notas: ' + promedioNotas.toFixed(2) + '</p>');
+    }
+
+</script>

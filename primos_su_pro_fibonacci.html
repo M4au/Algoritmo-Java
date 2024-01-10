@@ -1,0 +1,50 @@
+
+
+<script>
+    // Realizar un algoritmo que presente los números primos de los 10 primeros Fibonacci y además la suma 
+    // y promedio.
+
+
+    function esPrimo(num) {
+        if (num < 2) {
+            return false;
+        }
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    let serieFibonacci = [];
+    let sumaPrimos = 0;
+    let promedioPrimos = 0;
+
+    // Solicitar al usuario la longitud de la serie Fibonacci
+    let longitud = Number(prompt('Ingrese la longitud de la serie Fibonacci que desea:'));
+
+    // Calcular la serie Fibonacci
+    let a = 1, b = 1, c;
+    for (let i = 0; i < longitud; i++) {
+        serieFibonacci.push(a);
+        c = a + b;
+        a = b;
+        b = c;
+    }
+
+    document.write(`La serie Fibonacci ingresada es: ${serieFibonacci.join(', ')}<br>`);
+    document.write('Los números primos de la serie Fibonacci son: ');
+
+    // Calcular números primos, suma y promedio
+    let numerosPrimos = serieFibonacci.filter(num => esPrimo(num));
+
+    if (numerosPrimos.length > 0) {
+        sumaPrimos = numerosPrimos.reduce((sum, num) => sum + num, 0);
+        promedioPrimos = sumaPrimos / numerosPrimos.length;
+    }
+
+    document.write(numerosPrimos.join(', ') + '<br>');
+    document.write('Suma de los números primos: ' + sumaPrimos + '<br>');
+    document.write('Promedio de los números primos: ' + promedioPrimos + '<br>');
+</script>

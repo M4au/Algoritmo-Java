@@ -1,0 +1,45 @@
+
+<script>
+
+    function esPrimo(numero) {
+        if (numero < 2) return false;
+        for (let i = 2; i < numero; i++) {
+            if (numero % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    let a = 0, b = 1, c = 0, i = 0;
+    let suma = 0, prom = 0;
+    let num = 0;
+
+    num = Number(prompt('Ingrese un número'));
+
+    document.write('<p>Los primeros ' + num + ' números de Fibonacci son: ');
+
+    while (i < num) {
+        c = a + b;
+        a = b;
+        b = c;
+        i++;
+        suma = suma + a;
+        prom = suma / i;
+        
+        if (esPrimo(a)) {
+            document.write('<strong>' + a + '</strong>');
+        } else {
+            document.write(a);
+        }
+
+        if (i < num) {
+            document.write(', ');
+        }
+    }
+
+    document.write('</p>');
+    document.write('<p>La suma de los números de Fibonacci es: ', suma, '</p>');
+    document.write('<p>El promedio de los números de Fibonacci es: ', prom, '</p>');
+
+</script>

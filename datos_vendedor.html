@@ -1,0 +1,46 @@
+<script>
+    //Se desea ingresar los siguientes datos.
+ //● nombre del vendedor
+ //● sueldo básico
+ //● las ventas realizadas en el mes:
+ //● venta 1
+ //● venta 2
+ //● venta 3
+ //Diseñar el diagrama de flujo para calcular el sueldo total al fin de mes, si se sabe que la empresa reconoce 
+ //un 10% de comisión sobre el total de las ventas realizadas, se debe imprimir: el total de comisiones y el 
+ //sueldo total a recibir
+
+    // Función para calcular la comisión
+    function calcularComision(ventas) {
+        const porcentajeComision = 0.10;
+        return ventas * porcentajeComision;
+    }
+
+    // Función para calcular el sueldo total
+    function calcularSueldoTotal(sueldoBasico, comision) {
+        return sueldoBasico + comision;
+    }
+
+    // Ingreso de datos
+    let nombreVendedor = prompt('Ingrese el nombre del vendedor:');
+    let sueldoBasico = parseFloat(prompt('Ingrese el sueldo básico:'));
+    let venta1 = parseFloat(prompt('Ingrese el monto de la venta 1:'));
+    let venta2 = parseFloat(prompt('Ingrese el monto de la venta 2:'));
+    let venta3 = parseFloat(prompt('Ingrese el monto de la venta 3:'));
+
+    // Cálculo de la comisión
+    let totalVentas = venta1 + venta2 + venta3;
+    let comision = calcularComision(totalVentas);
+
+    // Cálculo del sueldo total
+    let sueldoTotal = calcularSueldoTotal(sueldoBasico, comision);
+
+    // Mostrar resultados
+    document.write('<h2>Resultados</h2>');
+    document.write('<p>Nombre del vendedor: ' + nombreVendedor + '</p>');
+    document.write('<p>Sueldo Básico: $' + sueldoBasico.toFixed(2) + '</p>');
+    document.write('<p>Total de Ventas: $' + totalVentas.toFixed(2) + '</p>');
+    document.write('<p>Comisión (10%): $' + comision.toFixed(2) + '</p>');
+    document.write('<p>Sueldo Total: $' + sueldoTotal.toFixed(2) + '</p>');
+
+</script>

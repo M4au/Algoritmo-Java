@@ -1,0 +1,42 @@
+<script>
+
+    // Ingreso de datos
+    let num1 = parseFloat(prompt('Ingrese el primer número:'));
+    let num2 = parseFloat(prompt('Ingrese el segundo número:'));
+    let num3 = parseFloat(prompt('Ingrese el tercer número:'));
+    let num4 = parseFloat(prompt('Ingrese el cuarto número:'));
+
+    // Validar que los valores sean números válidos
+    if (isNaN(num1) || isNaN(num2) || isNaN(num3) || isNaN(num4)) {
+        document.write('<p>Por favor, ingrese valores numéricos válidos.</p>');
+    } else {
+        // Encontrar el mayor y el menor
+        let mayor = num1;
+        let menor = num1;
+
+        if (num2 > mayor) {
+            mayor = num2;
+        } else if (num2 < menor) {
+            menor = num2;
+        }
+
+        if (num3 > mayor) {
+            mayor = num3;
+        } else if (num3 < menor) {
+            menor = num3;
+        }
+
+        if (num4 > mayor) {
+            mayor = num4;
+        } else if (num4 < menor) {
+            menor = num4;
+        }
+
+        // Mostrar resultados
+        document.write('<h2>Resultados</h2>');
+        document.write('<p>Los números ingresados son: ' + num1 + ', ' + num2 + ', ' + num3 + ', ' + num4 + '</p>');
+        document.write('<p>El mayor número es: ' + mayor + '</p>');
+        document.write('<p>El menor número es: ' + menor + '</p>');
+    }
+
+</script>

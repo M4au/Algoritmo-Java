@@ -1,0 +1,31 @@
+<script>
+
+    // Ingreso de datos
+    let valorA = parseFloat(prompt('Ingrese el valor A:'));
+    let valorB = parseFloat(prompt('Ingrese el valor B:'));
+    let valorC = parseFloat(prompt('Ingrese el valor C:'));
+
+    // Validar que los valores sean números válidos
+    if (isNaN(valorA) || isNaN(valorB) || isNaN(valorC)) {
+        document.write('<p>Por favor, ingrese valores numéricos válidos.</p>');
+    } else {
+        // Encontrar el menor de los tres valores
+        let menorValor = valorA;
+
+        if (valorB < menorValor) {
+            menorValor = valorB;
+        }
+
+        if (valorC < menorValor) {
+            menorValor = valorC;
+        }
+
+        // Mostrar resultado
+        document.write('<h2>Resultados</h2>');
+        document.write('<p>Valor A: ' + valorA + '</p>');
+        document.write('<p>Valor B: ' + valorB + '</p>');
+        document.write('<p>Valor C: ' + valorC + '</p>');
+        document.write('<p>El menor valor es: ' + menorValor + '</p>');
+    }
+
+</script>

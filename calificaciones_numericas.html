@@ -1,0 +1,31 @@
+<script>
+
+    // Ingreso de datos
+    let calificacion = parseInt(prompt('Ingrese la calificación (entre 1 y 20):'));
+
+    // Validar que la calificación sea un número válido
+    if (isNaN(calificacion) || calificacion < 1 || calificacion > 20) {
+        document.write('<p>Por favor, ingrese una calificación válida entre 1 y 20.</p>');
+    } else {
+        // Convertir calificación según la tabla
+        let resultado;
+
+        if (calificacion >= 19) {
+            resultado = 'SOBRESALIENTE';
+        } else if (calificacion >= 16) {
+            resultado = 'MUY BUENO';
+        } else if (calificacion >= 13) {
+            resultado = 'BUENO';
+        } else if (calificacion >= 10) {
+            resultado = 'REGULAR';
+        } else {
+            resultado = 'DEFICIENTE';
+        }
+
+        // Mostrar resultado
+        document.write('<h2>Resultado</h2>');
+        document.write('<p>Calificación numérica: ' + calificacion + '</p>');
+        document.write('<p>Calificación en letras: ' + resultado + '</p>');
+    }
+
+</script>

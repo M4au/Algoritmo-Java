@@ -1,0 +1,32 @@
+<script>
+   // Realizar un algoritmo que permita ingresar dos valores A y B, presentar la Multiplicación de 
+   //los Valores (A * B) utilizando sumas sucesivas
+
+    // Función para realizar la multiplicación por sumas sucesivas
+    function multiplicacionPorSumasSucesivas(a, b) {
+        let producto = 0;
+        for (let i = 0; i < b; i++) {
+            producto += a;
+        }
+        return producto;
+    }
+
+    // Ingreso de datos
+    let valorA = parseInt(prompt('Ingrese el valor A:'));
+    let valorB = parseInt(prompt('Ingrese el valor B:'));
+
+    // Validar que los valores sean números válidos
+    if (isNaN(valorA) || isNaN(valorB)) {
+        document.write('<p>Por favor, ingrese valores numéricos válidos.</p>');
+    } else {
+        // Calcular la multiplicación por sumas sucesivas
+        let resultadoMultiplicacion = multiplicacionPorSumasSucesivas(valorA, valorB);
+
+        // Mostrar resultados
+        document.write('<h2>Resultados</h2>');
+        document.write('<p>Valor A: ' + valorA + '</p>');
+        document.write('<p>Valor B: ' + valorB + '</p>');
+        document.write('<p>Multiplicación por sumas sucesivas: ' + resultadoMultiplicacion + '</p>');
+    }
+
+</script>

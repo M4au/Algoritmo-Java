@@ -1,0 +1,27 @@
+<script>
+    // Realizar un algoritmo que imprima los N primeros primos además la suma y promedio de ellos.
+
+    let num, i = 0;
+    let c, suma = 0, prom = 0;
+
+    num = Number(prompt('Ingrese un número'));
+
+    for (let currentNum = 2; i < num; currentNum++) {
+        c = 2;
+        while (currentNum % c !== 0 && c <= Math.sqrt(currentNum)) {
+            c++;
+        }
+
+        if (c > Math.sqrt(currentNum)) {
+            document.write(currentNum + ' Es primo <br>');
+            suma += currentNum;
+            prom = suma / (i + 1);
+            i++;
+        } else {
+            document.write(currentNum + ' No es primo <br>');
+        }
+    }
+
+    document.write('<br> La suma de los números primos es: ' + suma + '<br>');
+    document.write('El promedio de los números primos es: ' + prom + '<br>');
+</script>

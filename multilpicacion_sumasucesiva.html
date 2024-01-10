@@ -1,0 +1,41 @@
+<script>
+
+    // Función para calcular el producto con multiplicaciones sucesivas
+    function productoConMultiplicacionSucesiva(a, b) {
+        let producto = 0;
+        for (let i = 0; i < b; i++) {
+            producto += a;
+        }
+        return producto;
+    }
+
+    // Función para calcular la potencia con multiplicaciones sucesivas
+    function potenciaConMultiplicacionSucesiva(a, b) {
+        let potencia = 1;
+        for (let i = 0; i < b; i++) {
+            potencia = productoConMultiplicacionSucesiva(potencia, a);
+        }
+        return potencia;
+    }
+
+    // Ingreso de datos
+    let valorA = parseInt(prompt('Ingrese el valor A:'));
+    let valorB = parseInt(prompt('Ingrese el valor B:'));
+
+    // Validar que los valores sean números válidos
+    if (isNaN(valorA) || isNaN(valorB)) {
+        document.write('<p>Por favor, ingrese valores numéricos válidos.</p>');
+    } else {
+        // Calcular el producto y la potencia con multiplicaciones sucesivas
+        let resultadoProducto = productoConMultiplicacionSucesiva(valorA, valorB);
+        let resultadoPotencia = potenciaConMultiplicacionSucesiva(valorA, valorB);
+
+        // Mostrar resultados
+        document.write('<h2>Resultados</h2>');
+        document.write('<p>Valor A: ' + valorA + '</p>');
+        document.write('<p>Valor B: ' + valorB + '</p>');
+        document.write('<p>Producto con multiplicaciones sucesivas: ' + resultadoProducto + '</p>');
+        document.write('<p>Potencia con multiplicaciones sucesivas: ' + resultadoPotencia + '</p>');
+    }
+
+</script>

@@ -1,0 +1,51 @@
+<script>
+
+    // Función para verificar si un número es perfecto
+    function esNumeroPerfecto(numero) {
+        if (numero <= 1) {
+            return false;
+        }
+
+        let sumaDivisores = 1; // Inicializamos con el divisor 1
+        for (let i = 2; i <= Math.sqrt(numero); i++) {
+            if (numero % i === 0) {
+                sumaDivisores += i;
+                if (i !== numero / i) {
+                    sumaDivisores += numero / i;
+                }
+            }
+        }
+
+        return sumaDivisores === numero;
+    }
+
+    // Encontrar los primeros 4 números perfectos según la fórmula
+    let numerosPrimos = [2, 3, 5, 7];
+    let numerosPerfectos = [];
+
+    for (let i = 0; i < numerosPrimos.length; i++) {
+        let n = numerosPrimos[i];
+        let numeroPerfecto = Math.pow(2, n - 1) * (Math.pow(2, n) - 1);
+        numerosPerfectos.push(numeroPerfecto);
+    }
+
+    // Mostrar resultados
+    document.write('<h2>Números Perfectos</h2>');
+    document.write('<p>Los primeros 4 números perfectos según la fórmula son:</p>');
+    for (let i = 0; i < numerosPerfectos.length; i++) {
+        document.write('<p>Número perfecto ' + (i + 1) + ': ' + numerosPerfectos[i] + '</p>');
+    }
+
+    // Verificar si un número dado es perfecto
+    let numeroDado = parseInt(prompt('Ingrese un número para verificar si es perfecto:'));
+    if (!isNaN(numeroDado)) {
+        if (esNumeroPerfecto(numeroDado)) {
+            document.write('<p>' + numeroDado + ' es un número perfecto.</p>');
+        } else {
+            document.write('<p>' + numeroDado + ' no es un número perfecto.</p>');
+        }
+    } else {
+        document.write('<p>Por favor, ingrese un número válido para verificar si es perfecto.</p>');
+    }
+
+</script>
